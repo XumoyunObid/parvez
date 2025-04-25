@@ -1,0 +1,47 @@
+[
+  {
+    "thumbnail": "images/thumb1.jpg",
+    "image": "images/full1.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb2.jpg",
+    "image": "images/full2.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb3.jpg",
+    "image": "images/full3.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb4.jpg",
+    "image": "images/full4.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb5.jpg",
+    "image": "images/full5.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb6.jpg",
+    "image": "images/full6.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb7.jpg",
+    "image": "images/full7.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb8.jpg",
+    "image": "images/full8.jpg",
+    "caption": "Beautifull nature"
+  },
+  {
+    "thumbnail": "images/thumb9.jpg",
+    "image": "images/full9.jpg",
+    "caption": "Beautifull nature"
+  }
+]

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Parvez Khakimov</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="index.html" class="logo">Parvez</a>
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Me</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content gallery-section">
+      <section class="content-wrapper">
+        <h1 class="section-title">Explore My Creative Gallery</h1>
+        <p class="section-description">
+          Discover a curated collection of my artistic and creative moments
+          captured through imagery and design.
+        </p>
+
+        <div class="gallery-grid" id="gallery">
+          <!-- Dynamic gallery items will be inserted here -->
+        </div>
+
+        <!-- Modal Section -->
+        <div class="modal" id="imageModal">
+          <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <img id="modalImage" src="" alt="Full Image" />
+            <p id="imageCaption" class="image-caption"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 Parvez Khakimov | All Rights Reserved</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
