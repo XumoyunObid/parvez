@@ -1,64 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
   fetch("./json/gallery.json")
     .then((response) => response.json())
-    .then((collections) => {
-      const carousel = document.getElementById("carousel");
-      const prevBtn = document.getElementById("prevBtn");
-      const nextBtn = document.getElementById("nextBtn");
+    .then((images) => {
+      const carouselInner = document.getElementById("carouselInner");
+      const carouselIndicators = document.getElementById("carouselIndicators");
+      const thumbnails = document.getElementById("thumbnails");
 
-      let currentIndex = 0;
+      images.forEach((img, index) => {
+        const activeClass = index === 0 ? "active" : "";
 
-      function updateCarousel() {
-        // Clear the carousel content
-        carousel.innerHTML = "";
+        // Add carousel item
+        carouselInner.innerHTML += `
+          <div class="carousel-item ${activeClass}">
+            <img src="${img.image}" class="d-block w-100 rounded-4" alt="${img.caption}">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>${img.caption}</h5>
+            </div>
+          </div>
+        `;
 
-        // Get the current image
-        const collection = collections[currentIndex];
+        // Add carousel indicator
+        carouselIndicators.innerHTML += `
+          <button
+            type="button"
+            data-bs-target="#mainCarousel"
+            data-bs-slide-to="${index}"
+            class="${activeClass}"
+            aria-current="${index === 0 ? "true" : "false"}"
+            aria-label="Slide ${index + 1}"
+          ></button>
+        `;
 
-        // Create the image container
-        const slide = document.createElement("div");
-        slide.classList.add("carousel-item");
-
-        // Create the image element
-        const img = document.createElement("img");
-        img.src = collection.image;
-        img.alt = collection.caption;
-        img.classList.add("carousel-image");
-
-        // Create the caption
-        const caption = document.createElement("div");
-        caption.classList.add("carousel-caption");
-        const captionText = document.createElement("p");
-        captionText.textContent = collection.caption;
-        caption.appendChild(captionText);
-
-        // Append image and caption to slide
-        slide.appendChild(img);
-        slide.appendChild(caption);
-
-        // Add slide to carousel
-        carousel.appendChild(slide);
-      }
-
-      // Show the first image initially
-      updateCarousel();
-
-      // Handle "previous" button click
-      prevBtn.addEventListener("click", function () {
-        currentIndex =
-          currentIndex === 0 ? collections.length - 1 : currentIndex - 1;
-        updateCarousel();
-      });
-
-      // Handle "next" button click
-      nextBtn.addEventListener("click", function () {
-        currentIndex =
-          currentIndex === collections.length - 1 ? 0 : currentIndex + 1;
-        updateCarousel();
+        thumbnails.innerHTML += `
+          <img
+            src="${img.image}"
+            class="img-thumbnail"
+            style="width: 100px; height: 70px; object-fit: cover; cursor: pointer;"
+            alt="${img.caption}"
+            data-bs-target="#mainCarousel"
+            data-bs-slide-to="${index}"
+          />
+        `;
       });
     })
-    .catch((error) => {
-      console.error("Error loading collections:", error);
-      alert("Sorry, there was an error loading the collections.");
-    });
+    .catch((error) => console.error("Error loading gallery:", error));
 });
