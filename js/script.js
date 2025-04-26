@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       images.forEach((image) => {
         const col = document.createElement("div");
-        col.classList.add("col-sm-6", "col-md-4", "col-lg-3");
+        col.classList.add("col-sm-6", "col-md-4", "col-lg-4");
 
         const imgElement = document.createElement("img");
         imgElement.src = image.thumbnail;
